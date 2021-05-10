@@ -4,7 +4,6 @@ import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
-import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
@@ -14,15 +13,14 @@ import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 import org.apache.hadoop.util.GenericOptionsParser;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
-import wikibooks.hadoop.chapter05.DelayCountMapperWithMultipleOutputs;
-import wikibooks.hadoop.chapter05.DelayCountReducerWithMultipleOutputs;
 
 public class DelayCountWithDateKey extends Configured implements Tool {
     public static void main(String[] args) throws Exception {
-    // Tool 인터페이스 실행
-    int res = ToolRunner.run(new Configuration(), new DelayCountWithDateKey(), args);
-    System.out.println("MR-Job Result:" + res);
-}
+        // Tool 인터페이스 실행
+        int res = ToolRunner.run(new Configuration(), new DelayCountWithDateKey(), args);
+        System.out.println("MR-Job Result:" + res);
+    }
+
     @Override
     public int run(String[] args) throws Exception {
         String[] otherArgs = new GenericOptionsParser(getConf(), args).getRemainingArgs();

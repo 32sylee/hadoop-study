@@ -20,6 +20,7 @@ public class DelayCountWithCounter extends Configured implements Tool {
         int res = ToolRunner.run(new Configuration(), new DelayCountWithCounter(), args);
         System.out.println("MR-Job Result:" + res);
     }
+
     @Override
     public int run(String[] args) throws Exception {
         String[] otherArgs = new GenericOptionsParser(getConf(), args).getRemainingArgs();

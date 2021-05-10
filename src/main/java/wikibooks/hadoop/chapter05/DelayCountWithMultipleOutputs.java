@@ -17,10 +17,11 @@ import org.apache.hadoop.util.ToolRunner;
 
 public class DelayCountWithMultipleOutputs extends Configured implements Tool {
     public static void main(String[] args) throws Exception {
-    // Tool 인터페이스 실행
-    int res = ToolRunner.run(new Configuration(), new DelayCountWithMultipleOutputs(), args);
-    System.out.println("MR-Job Result:" + res);
-}
+        // Tool 인터페이스 실행
+        int res = ToolRunner.run(new Configuration(), new DelayCountWithMultipleOutputs(), args);
+        System.out.println("MR-Job Result:" + res);
+    }
+
     @Override
     public int run(String[] args) throws Exception {
         String[] otherArgs = new GenericOptionsParser(getConf(), args).getRemainingArgs();
